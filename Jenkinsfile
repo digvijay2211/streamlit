@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage("checkout code") {
-            step {
+            steps {
                 git url:"https://github.com/digvijay2211/streamlit.git",
                 branch: "main"
             }
