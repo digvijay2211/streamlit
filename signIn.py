@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.header("Welcome to D's new Website")
+st.header("Welcome to D's Website")
 st.subheader("Sign In")
 
 st.text_input("Username")
