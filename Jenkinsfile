@@ -13,12 +13,6 @@ pipeline {
             }
         }
         
-        stage('cleanup stage') {
-            steps {
-                sh 'docker rmi -f myimage'
-                sh 'docker rm -f $(docker ps -aq)'
-            }
-        }
 
         stage('build image'){
             steps{
