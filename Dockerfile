@@ -4,4 +4,4 @@ WORKDIR /var
 COPY . .
 EXPOSE 8501
 # Run streamlit application
-CMD ["streamlit", "run", "signUp.py"]
+CMD ["streamlit", "run", "signIn.py"]
