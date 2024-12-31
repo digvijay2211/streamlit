@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'jenkin_slave_node'
+        }
+    }
+
     stages {
         stage("checkout code") {
             steps {
@@ -8,6 +13,13 @@ pipeline {
             }
         }
         
+        stage('cleanup stage') {
+            steps {
+                sh 'docker rmi -f myimage'
+                sh 'docker rm -f $(docker ps -aq)'
+            }
+        }
+
         stage('build image'){
             steps{
                 sh 'docker build -t myimage .'
