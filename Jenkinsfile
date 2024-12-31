@@ -14,7 +14,7 @@ pipeline {
         }
         stage('create conatiner'){
             steps{
-                sh 'docker apply -d -p 8501:8501 myimg'
+                sh 'docker run -d -p 8501:8501 myimg'
             }
         }
     }
